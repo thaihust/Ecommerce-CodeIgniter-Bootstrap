@@ -1,0 +1,17 @@
+version: '2'
+services:
+  mariadb:
+    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=no
+      - MARIADB_ROOT_USER=root
+      - MARIADB_ROOT_PASSWORD=toor
+      - MARIADB_DATABASE=shop
+    networks:
+      codeigniter_network:
+        aliases:
+          - database
+networks:
+  codeigniter_network:
+    external:
+      name: codeigniter_network

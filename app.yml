@@ -1,0 +1,13 @@
+version: '2.2'
+services:
+  web:
+    image: aspendigital/codeigniter:latest
+    ports:
+      - "80:80"
+    volumes:
+      - $PWD:/var/www/html
+
+networks:
+  default:
+    external:
+      name: codeigniter_network
